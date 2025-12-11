@@ -19,7 +19,7 @@ body, html{
 
 header{
     display: flex;
-    padding: 20px;
+    padding: 40px;
     justify-content: space-between;
 }
 
@@ -62,6 +62,7 @@ header > div > nav > ul > li > a{
 }
 
 header > div > nav a{
+    -webkit-tap-highlight-color: transparent;
     padding-top: 10px;
     text-decoration: none;
     color: black;
@@ -160,6 +161,95 @@ div:nth-child(3){
 @media screen and (min-width: 412px){
     main > .informacoes > a{
         place-self: center;
-        margin-right: 5px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    header{
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    header > h1 {
+        font-size: 3.5rem;
+    }
+
+    header > div > #paragrafo{
+        display: none;
+    }
+
+    header > div > #menu{
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    header > div > nav > ul{
+        background-color: transparent;
+        position: relative;
+        left: 35px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header > div > nav > ul > li{
+        padding-right: 20px;
+    }
+
+    header > div > nav > ul > li > a{
+        color: black;
+        padding: 0px 10px;
+    }
+
+    header > div > nav > ul > li > a:hover {
+        text-decoration: underline;
+    }
+
+    main > .informacoes > h1{
+        font-size: 3.5rem;
+        text-indent: 40px;
+    }
+
+    main > .informacoes > img{
+        width: 260px;
+        height: 260px;
+    }
+
+    main > .informacoes > p{
+        font-size: 2rem;
+    }
+
+    main > .informacoes > a{
+        width: 220px;
+        height: 80px;
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+
+    main > .recursos > h1{
+        font-size: 2rem;
+        padding-left: 30px;
+    }
+
+    main > .recursos > div > img{
+        width: 35px;
+        height: 35px;
+    }
+
+    main > .recursos > div{
+        text-align: center;
+    }
+
+    main > .recursos > div.ultimo{
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    main > .recursos > div > h2{
+        font-size: 1.69rem;
+    }
+
+    main > .recursos > div > p{
+        font-size: 1.5rem;
     }
 }
