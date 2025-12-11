@@ -28,6 +28,8 @@ header > div > p {
 }
 
 header > div > nav > ul {
+    position: absolute;
+    left: -70px;
     list-style-type: none;
     height: auto;
     padding: 3px 6px;
@@ -48,13 +50,14 @@ header > div > nav > ul > li > a{
 }
 
 #menu{
+    position: absolute;
     display: none;
     transition: transform 0.3s ease;
     transform: translateX(-100%);
 }
 
 #menu.ativo {
-    display: block;
+    display: flex;
     transform: translateX(0);
 }
 
