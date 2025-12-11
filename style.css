@@ -19,12 +19,53 @@ body, html{
 
 header{
     display: flex;
-    padding: 40px;
+    padding: 20px;
     justify-content: space-between;
 }
 
+header > div > p {
+    font-size: 1.5rem;
+}
+
+header > div > nav > ul {
+    list-style-type: none;
+    height: auto;
+    padding: 3px 6px;
+    background-color: rgba(128, 128, 128, 0.856);
+}
+
+header > div > nav > ul > li{
+    padding: 15px 8px;
+}
+
+header > div > nav > ul > li:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+header > div > nav > ul > li > a{
+    color: white;
+}
+
+#menu{
+    display: none;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+#menu.ativo {
+    display: block;
+    transform: translateX(0);
+}
+
+header > div > nav a{
+    padding-top: 10px;
+    text-decoration: none;
+    color: black;
+}
+
 header > h1{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 header > p{
     font-size: 1.5rem;
@@ -87,7 +128,7 @@ main > .recursos{
 
 main > .recursos > h1{
     font-size: 1.4rem;
-    padding: 50px 25px 0px 15px;
+    padding: 35px 25px 0px 15px;
     grid-column: 1 / -1 ;
 }
 
