@@ -1,6 +1,7 @@
-const btn = document.querySelector("#paragrafo");
+const hamburguer = document.querySelector("#hamburguer");
 const menu = document.querySelector("#menu");
 
-btn.addEventListener("click", () => {
-    menu.classList.toggle("ativo");
-})
+hamburguer.addEventListener("click", () =>{
+    hamburguer.classList.toggle("active");
+    menu.classList.toggle("active");
+});

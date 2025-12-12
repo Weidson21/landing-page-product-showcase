@@ -23,8 +23,31 @@ header{
     justify-content: space-between;
 }
 
-header > div > p {
-    font-size: 1.5rem;
+header > div > .hamburguer {
+    width: 35px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+header > div > .hamburguer span {
+    width: 100%;
+    height: 3px;
+    background: black;
+    transition: .3s;
+}
+
+.hamburguer.active span:nth-child(1){
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburguer.active span:nth-child(3){
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 header > div > nav > ul {
@@ -52,13 +75,17 @@ header > div > nav > ul > li > a{
 #menu{
     position: absolute;
     display: none;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%);
+    flex-direction: column;
+    transform: translateY(-10px);
+    transition: max-height 2s ease,
+    opacity 2s ease,
+    transform 2s ease;
 }
 
-#menu.ativo {
+#menu.active {
     display: flex;
-    transform: translateX(0);
+    opacity: 2;
+    transform: translateY(0);
 }
 
 header > div > nav a{
@@ -93,6 +120,8 @@ main > .informacoes > h1{
 
 main > .informacoes > img{
     place-self: center;
+    width: 180px;
+    height: 180px;
 }
 
 main > .informacoes > p{
@@ -104,9 +133,10 @@ main > .informacoes > p{
 }
 
 main > .informacoes > a{
+    -webkit-tap-highlight-color: transparent;
     width: 160px;
     height: 60px;
-    margin-left: 14px;
+    margin-left: 30px;
     padding: 13px;
     text-decoration: none;
     border: 1px solid blue;
@@ -116,12 +146,26 @@ main > .informacoes > a{
     text-align: center;
     font-weight: bold;
     font-size: 1.1rem;
+    position: relative;
+    left: -10px;
+}
+
+main > .informacoes > a.comprar:hover{
+    background-color: white;
+    color: blue;
 }
 
 main > .informacoes > a.saiba{
     background-color: white;
     color: blue;
     font-weight: bold;
+    position: relative;
+    left: -22px;
+}
+
+main > .informacoes > a.saiba:hover{
+    background-color: blue;
+    color: white;
 }
 
 main > .recursos{
@@ -162,6 +206,8 @@ div:nth-child(3){
     main > .informacoes > a{
         place-self: center;
         margin-right: 10px;
+        position: relative;
+        left: 4px;
     }
 }
 
@@ -172,7 +218,7 @@ div:nth-child(3){
         justify-content: space-between;
     }
     header > h1 {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     header > div > #paragrafo{
@@ -181,7 +227,7 @@ div:nth-child(3){
 
     header > div > #menu{
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     header > div > nav > ul{
@@ -206,34 +252,41 @@ div:nth-child(3){
     }
 
     main > .informacoes > h1{
-        font-size: 3.5rem;
+        font-size: 3rem;
         text-indent: 40px;
     }
 
     main > .informacoes > img{
-        width: 260px;
-        height: 260px;
+        width: 230px;
+        height: 230px;
     }
 
     main > .informacoes > p{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     main > .informacoes > a{
         width: 220px;
-        height: 80px;
+        height: 70px;
         padding: 20px;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        position: relative;
+        left: 90px;
+        margin-right: 100px;
+    }
+
+    main > .informacoes > a.sabia{
+        position: relative;
     }
 
     main > .recursos > h1{
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding-left: 30px;
     }
 
     main > .recursos > div > img{
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     main > .recursos > div{
@@ -246,10 +299,75 @@ div:nth-child(3){
     }
 
     main > .recursos > div > h2{
-        font-size: 1.69rem;
+        font-size: 1.3rem;
     }
 
     main > .recursos > div > p{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    header > h1{
+        font-size: 2rem;
+    }
+
+    header > div > #menu{
+        font-size: 1rem;
+    }
+
+    main > .informacoes{
+        gap: 20px;
+    }
+
+    main > .informacoes > h1{
+        font-size: 2.3rem;
+        text-indent: 200px;
+    }
+
+    main > .informacoes > img{
+        width: 180px;
+        height: 180px;
+    }
+
+    main > .informacoes > p{
         font-size: 1.5rem;
+    }
+
+    main > .informacoes > a{
+        height: 55px;
+        font-size: 1.2rem;
+        padding: 15px;
+        place-self: end;
+    }
+
+    main > .informacoes > a.saiba{
+        place-self: start;
+    }
+
+    main > .recursos{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    main > .recursos > h1{
+        padding: 50px 40px;
+        font-size: 1.7rem;
+    }
+
+    main > .recursos > div.ultimo{
+        grid-column: auto;
+    }
+
+    main > .recursos > div > img{
+        width: 30px;
+        height: 30px;
+    }
+
+    main > .recursos div > h2{
+        font-size: 1rem;
+    }
+
+    main > .recursos > div > p{
+        font-size: 0.8rem;
     }
 }
