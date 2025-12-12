@@ -35,6 +35,7 @@ header > div > .hamburguer{
     padding: 0;
     position: relative;
     top: 8px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 header > div > .hamburguer span {
@@ -79,7 +80,6 @@ header > div > nav > ul > li > a{
     position: absolute;
     top: 70px;
     display: none;
-    flex-direction: column;
     transform: translateY(-10px);
     transition: max-height 2s ease,
     opacity 2s ease,
@@ -88,7 +88,7 @@ header > div > nav > ul > li > a{
 
 #menu.active {
     display: flex;
-    opacity: 2;
+    flex-direction: column;
     transform: translateY(0);
 }
 
@@ -223,15 +223,20 @@ div:nth-child(3){
     }
     header > h1 {
         font-size: 2.5rem;
+        padding: 20px;
     }
 
-    header > div > #paragrafo{
+    header > div > .hamburguer{
         display: none;
     }
 
-    header > div > #menu{
-        display: block;
+    #menu{
+        display: flex;
+        flex-direction: row;
         font-size: 1.2rem;
+        position: static;
+        top: auto;
+        transform: none;
     }
 
     header > div > nav > ul{
@@ -253,6 +258,10 @@ div:nth-child(3){
 
     header > div > nav > ul > li > a:hover {
         text-decoration: underline;
+    }
+
+    main > .informacoes{
+        padding-top: 15px;
     }
 
     main > .informacoes > h1{
@@ -317,6 +326,7 @@ div:nth-child(3){
     }
 
     header > div > #menu{
+        display: flex;
         font-size: 1rem;
     }
 
